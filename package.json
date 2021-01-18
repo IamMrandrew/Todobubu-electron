@@ -56,12 +56,14 @@
   "main": "public/main.js",
   "build": {
     "appId": "com.example.electron-cra",
+    "productName": "Todobubu",
     "files": [
       "build/**/*",
-      "node_modules/**/*"
+      "node_modules/**/*",
+      "build/icon.*"
     ],
     "directories": {
-      "buildResources": "assets"
+      "buildResources": "build"
     }
   },
   "homepage": "./"
