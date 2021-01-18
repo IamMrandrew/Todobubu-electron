@@ -10,8 +10,10 @@ let mainWindow;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 900,
-    height: 680,
+    width: 425,
+    height: 800,
+    minWidth: 425,
+    minHeight: 740,
     webPreferences: {
       nodeIntegration: true,
       nativeWindowOpen: true,
@@ -19,9 +21,7 @@ function createWindow() {
     },
   });
   mainWindow.loadURL(
-    isDev
-      ? "http://localhost:3000"
-      : `file://${path.join(__dirname, "../build/index.html")}`
+    isDev ? "http://localhost:3000" : "https://todobubu.laporatory.com"
   );
   mainWindow.on("closed", () => (mainWindow = null));
 }
