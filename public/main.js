@@ -19,9 +19,7 @@ function createWindow() {
     },
   });
   mainWindow.loadURL(
-    isDev
-      ? "http://localhost:3000"
-      : `file://${path.join(__dirname, "../build/index.html")}`
+    isDev ? "http://localhost:3000" : "https://todobubu.laporatory.com"
   );
   mainWindow.on("closed", () => (mainWindow = null));
 }
