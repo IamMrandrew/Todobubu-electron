@@ -14,6 +14,7 @@ function createWindow() {
     height: 800,
     minWidth: 425,
     minHeight: 740,
+    autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: true,
       nativeWindowOpen: true,
@@ -24,6 +25,7 @@ function createWindow() {
     isDev ? "http://localhost:3000" : "https://todobubu.laporatory.com"
   );
   mainWindow.on("closed", () => (mainWindow = null));
+  mainWindow.setApplicationMenu(menu);
 }
 
 app.on("ready", createWindow);
