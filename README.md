@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+<img src="https://user-images.githubusercontent.com/62586450/105201950-685e1280-5b7c-11eb-8676-f77b2f5dc3e7.png" width="128" height="128">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Todobubu Desktop
 
-## Available Scripts
+Todobubu Desktop, is built and wrap with [electron](https://github.com/electron/electron). Check out the main web application [Todobubu](https://github.com/IamMrandrew/Todobubu).
 
-In the project directory, you can run:
 
-### `yarn start`
+## Getting Started
+
+If you are interested in this project, you can run:
+
+### `yarn electron-dev`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### `yarn electron-pack`
 
-### `yarn test`
+Builds and pack the app for distribution to the `dist` folder.\
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+It will pack the mac version which contain the dmg. Pay attention that the dmg is unsigned yet and may not be able to distribute for other users due to the security of mac
 
-### `yarn build`
+### `yarn electron-pack-w`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds and pack the app for distribution to the `dist` folder.\
+It will pack the windows version which contain the exe. It works properly on windows with some tests.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Issues
+- Google authentication is not working
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributing
+There are some issue with this project. Pull requests are welcome for bugfixing or features.
 
-### `yarn eject`
+### Menu Bar on Windows
+I struggled on removing the menu bar under the title bar on windows. Tried few config or function inside main.js but it is not working as expected.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Authentication
+Using electron to wrap desktop application, Google does not allow to authenticate on this kind of "browser". My current workaround is giving up the Google authentication and use GitHub account instead. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+However, after packing for distribution, it refuse all authentication as the application is not hosted on "server"?, or not within a browser. For now, I am using the site that I host in netlify as the "source" of this applciation. In order to work for the cloud-based account.
